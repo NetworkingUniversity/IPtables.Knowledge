@@ -16,6 +16,13 @@ build(){
   # It's going to ask you to unlock your GPG key to sign package! use password set when generated.
 }
 
+install(){
+  # Has an interactive install that asks questions
+  sudo apt install ./ipset-persistent_1.0.23_all.deb
+  sudo apt install ./iptables-persistent_*_all.deb
+  sudo apt install ./netfilter-persistent_1.0.23_all.deb
+}
+
 generate_signing_key(){
   # The Maintainer has a step that requires his GPG key.
   # You have to generate a key using his exact Name & Email! Else the build will fail
