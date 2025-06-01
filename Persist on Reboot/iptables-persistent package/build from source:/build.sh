@@ -14,6 +14,9 @@ pre(){
   # Setup build dir
   mkdir -p ~/dev
   cd ~/dev
+
+  # Depends
+  sudo apt-get install build-essential #fakeroot dpkg-dev
   
   sudo apt-get source iptables-persistent
   sudo apt-get build-dep iptables-persistent
