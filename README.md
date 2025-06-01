@@ -6,6 +6,7 @@ sch:
 # Wiki:
 - https://en.wikipedia.org/wiki/Iptables
 - https://wiki.archlinux.org/title/Iptables
+- https://wiki.archlinux.org/title/Simple_stateful_firewall
 
 # Guide:
 - https://www.redhat.com/en/blog/iptables
@@ -13,3 +14,4 @@ sch:
 
 # Relation:
 - https://en.wikipedia.org/wiki/Netfilter
+- https://wiki.archlinux.org/title/Internet_sharing#With_iptables
