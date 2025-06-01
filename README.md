@@ -4,7 +4,8 @@ sch:
 - https://www.google.com/search?q=iptables+tutorial
 
 # Wiki:
-https://en.wikipedia.org/wiki/Iptables
+- https://en.wikipedia.org/wiki/Iptables
+- https://wiki.archlinux.org/title/Iptables
 
 # Guide:
 - https://www.redhat.com/en/blog/iptables
