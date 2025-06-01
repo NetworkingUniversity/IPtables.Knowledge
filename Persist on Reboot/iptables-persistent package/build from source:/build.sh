@@ -1,3 +1,5 @@
+# This build requires manual input, at certain steps!
+
 #https://launchpad.net/ubuntu/+source/iptables-persistent
 #https://www.cmiss.org/cmgui/wiki/BuildingUbuntuPackagesFromSource
 
