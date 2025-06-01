@@ -1,0 +1,36 @@
+pre(){
+  # Setup build dir
+  mkdir -p ~/dev
+  cd ~/dev
+  
+  sudo apt-get source iptables-persistent
+  sudo apt-get build-dep iptables-persistent
+}
+
+build(){  
+  cd ~/dev/iptables-persistent-*/
+  
+  # Now build:
+  dpkg-buildpackage -rfakeroot -b
+
+  # It's going to ask you to unlock your GPG key to sign package! use password set when generated.
+}
+
+generate_signing_key(){
+  # The Maintainer has a step that requires his GPG key.
+  # You have to generate a key using his exact Name & Email! Else the build will fail
+  # solves: "dpkg-buildpackage: error: failed to sign ../iptables-persistent_1.0.23_amd64.buildinfo file: OpenPGP backend command cannot sign"
+  gpg --generate-key
+  
+  # Enter:
+  echo "gustavo panizzo"
+  echo "gfa@zumbi.com.ar"
+  
+  # ToDo: automate https://www.google.com/search?q=gpg+--generate-key+in+script+user+name+email
+}
+
+main(){
+  pre
+  generate_signing_key
+  build
+}
