@@ -3,7 +3,14 @@
 #https://launchpad.net/ubuntu/+source/iptables-persistent
 #https://www.cmiss.org/cmgui/wiki/BuildingUbuntuPackagesFromSource
 
+apt_sources(){
+  sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
+  sudo apt update
+}
+
 pre(){
+  apt_sources
+  
   # Setup build dir
   mkdir -p ~/dev
   cd ~/dev
