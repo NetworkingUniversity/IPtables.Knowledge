@@ -1,3 +1,6 @@
+#https://launchpad.net/ubuntu/+source/iptables-persistent
+#https://www.cmiss.org/cmgui/wiki/BuildingUbuntuPackagesFromSource
+
 pre(){
   # Setup build dir
   mkdir -p ~/dev
