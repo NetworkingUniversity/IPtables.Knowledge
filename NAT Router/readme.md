@@ -1,2 +1,3 @@
-https://wiki.archlinux.org/title/Internet_sharing#With_iptables
-https://wiki.archlinux.org/title/Router
+# Guide:
+- https://wiki.archlinux.org/title/Internet_sharing#With_iptables
+- https://wiki.archlinux.org/title/Router
