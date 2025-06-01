@@ -11,6 +11,7 @@ sch:
 - https://www.redhat.com/en/blog/iptables
 - https://phoenixnap.com/kb/iptables-linux
 - https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html
+- https://www.frozentux.net/2024/12/iptables-tutoral-1-2-3/
 
 # Relation:
 - https://en.wikipedia.org/wiki/Netfilter
