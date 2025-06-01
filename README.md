@@ -10,3 +10,6 @@ sch:
 # Guide:
 - https://www.redhat.com/en/blog/iptables
 - https://phoenixnap.com/kb/iptables-linux
+
+# Relation:
+- https://en.wikipedia.org/wiki/Netfilter
