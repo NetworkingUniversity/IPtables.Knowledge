@@ -9,8 +9,6 @@ apt_sources(){
 }
 
 pre(){
-  apt_sources
-  
   # Setup build dir
   mkdir -p ~/dev
   cd ~/dev
@@ -21,6 +19,19 @@ pre(){
   # Source:
   sudo apt-get source iptables-persistent
   sudo apt-get build-dep iptables-persistent
+}
+
+generate_signing_key(){
+  # The Maintainer has a step that requires his GPG key.
+  # You have to generate a key using his exact Name & Email! Else the build will fail
+  # solves: "dpkg-buildpackage: error: failed to sign ../iptables-persistent_1.0.23_amd64.buildinfo file: OpenPGP backend command cannot sign"
+  gpg --generate-key
+  
+  # Enter:
+  echo "gustavo panizzo"
+  echo "gfa@zumbi.com.ar"
+  
+  # ToDo: automate https://www.google.com/search?q=gpg+--generate-key+in+script+user+name+email
 }
 
 build(){  
@@ -39,21 +50,10 @@ install(){
   sudo apt install ./netfilter-persistent_1.0.23_all.deb
 }
 
-generate_signing_key(){
-  # The Maintainer has a step that requires his GPG key.
-  # You have to generate a key using his exact Name & Email! Else the build will fail
-  # solves: "dpkg-buildpackage: error: failed to sign ../iptables-persistent_1.0.23_amd64.buildinfo file: OpenPGP backend command cannot sign"
-  gpg --generate-key
-  
-  # Enter:
-  echo "gustavo panizzo"
-  echo "gfa@zumbi.com.ar"
-  
-  # ToDo: automate https://www.google.com/search?q=gpg+--generate-key+in+script+user+name+email
-}
-
 main(){
+  apt_sources
   pre
   generate_signing_key
   build
+  install
 }
